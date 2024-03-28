@@ -1,0 +1,1 @@
+trial project organization on the mini-test of MNIST digit classification
