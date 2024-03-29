@@ -2,3 +2,9 @@ datasets
 project0/input/*csv
 project0/input/*zip
 project0/models/*
+project1/input/*csv
+project1/input/*zip
+project1/models/*
+project2/input/*csv
+project2/input/*zip
+project2/models/*
