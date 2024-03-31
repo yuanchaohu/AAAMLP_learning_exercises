@@ -68,4 +68,6 @@ websocket-client==0.57.0
 werkzeug==1.0.1
 wrapt==1.12.1
 zipp==3.1.0
-
+tsfresh
+scikit-optimize
+hyperopt
