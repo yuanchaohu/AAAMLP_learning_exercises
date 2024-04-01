@@ -74,3 +74,5 @@ hyperopt
 segmentation_models_pytorch
 apex
 pretrainedmodels
+albumentations
+wtfml
