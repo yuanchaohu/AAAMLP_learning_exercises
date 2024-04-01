@@ -71,3 +71,6 @@ zipp==3.1.0
 tsfresh
 scikit-optimize
 hyperopt
+segmentation_models_pytorch
+apex
+pretrainedmodels
