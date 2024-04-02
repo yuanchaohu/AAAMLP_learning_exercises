@@ -4,7 +4,7 @@ from nltk.tokenize import word_tokenize
 from sklearn import linear_model, naive_bayes
 from sklearn import metrics
 from sklearn import model_selection
-from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 
 if __name__ == "__main__":
     df = pd.read_csv("./datasets/imdb/Dataset.csv")
@@ -25,9 +25,10 @@ if __name__ == "__main__":
         train_df = df[df.kfold != fold].reset_index(drop=True)
         test_df = df[df.kfold == fold].reset_index(drop=True)
 
-        count_vec = CountVectorizer(
+        count_vec = TfidfVectorizer(
             tokenizer=word_tokenize,
-            token_pattern=None
+            token_pattern=None,
+            ngram_range=(1, 3)
         )
         count_vec.fit(train_df.review)
 
@@ -40,6 +41,4 @@ if __name__ == "__main__":
 
         preds = model.predict(xtest)
         accuracy = metrics.accuracy_score(test_df.sentiment, preds)
-        print(f"Fold: {fold}")
-        print(f"Accuracy: {accuracy}")
-        print()
+        print(f"Fold: {fold}; Accuracy: {accuracy}")
