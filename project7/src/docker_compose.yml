@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+  api:
+    image: bert:api
+    command: /home/username/.local/bin/gunicorn api:app --bind 0.0.0.0:5000 --workers 4
+    # mount the volume
+    volumes:
+      -
+/home/somedirs/:/home/dockerlocation/
+network_mode: host
